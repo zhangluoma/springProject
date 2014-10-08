@@ -31,9 +31,9 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		DB database = (DB)context.getBean("database");
+		DB database = (DB)context.getBean("databaseOracle");
 		database.connect();
-		System.out.println(database.getName());
+		database.getName();
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
 		

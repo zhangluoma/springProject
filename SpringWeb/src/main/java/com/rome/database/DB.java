@@ -26,7 +26,9 @@ public class DB
 		try {
 			conn = dataSource.getConnection();
 			stmt = conn.createStatement();
+			if(databaseName!=null){
 			stmt.execute("use "+databaseName);
+			}
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
  
@@ -42,9 +44,9 @@ public class DB
 	public String getName(){
 		String name=null;
 		try {
-			ResultSet rset=stmt.executeQuery("select * from rome");
+			ResultSet rset=stmt.executeQuery("select * from users");
 			while(rset.next()){
-				name = rset.getString(1);
+				System.out.println(name = rset.getString(1));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
