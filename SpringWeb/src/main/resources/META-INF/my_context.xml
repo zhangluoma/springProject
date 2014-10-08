@@ -8,8 +8,21 @@
       <property name="username" value="zhangluoma" />
       <property name="password" value="88522712" />
     </bean>
+    
     <bean id="database" class="com.rome.database.DB">
     	<property name="dataSource" ref="dataSource" />
     	<property name="databaseName" value="tinyFaceBook"/>
     </bean>
+    <!--
+    <bean id="dataSourceOracle" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+      <property name="url" value="jdbc:oracle:thin:@w4111b.cs.columbia.edu:1521:ADB" />
+      <property name="username" value="jl4376" />
+      <property name="password" value="jl4376" />
+    </bean>
+    <bean id="databaseOracle" class="com.rome.database.DB">
+    	<property name="dataSource" ref="dataSourceOracle" />
+    	<property name="databaseName" value="tinyFaceBook"/>
+    </bean>
+    -->
 </beans>
